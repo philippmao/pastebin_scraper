@@ -1,14 +1,10 @@
 #!usr/bin/python
-
+import sys, os
+sys.path.insert(1, os.path.join(sys.path[0], '..'))
+from constants import DB_HOST, DB_NAME, DB_USER, DB_PW, DB_TABLE_NAME, SC_PER_PAGE
 import requests, MySQLdb, peewee, time, json, logging, sys, collections
 
 
-"""Insert your own mysql information"""
-DB_HOST = ""
-DB_NAME = ""
-DB_USER = ""
-DB_PW = ""
-DB_TABLE_NAME = "scrape"
 # times 60 seconds for general duplicate removal
 GENERAL_CLEANUP_COUNTER = 60
 # size of duplicate check FIFO queue
