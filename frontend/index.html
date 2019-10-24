@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pastebin Scraper</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div id="h1" class="b-4 p-2 page-header text-center" style="background-color: lightgrey;">
+        <a href="/" style="text-decoration: none; color:#28a745">
+            <h1>Pastebin Scraper</h1>
+            <p>milCERT CTI project</p>
+        </a>
+    </div>
+
+    <div class="container">
+        <form class="pt-4 form-search" action="/cgi-bin/pastebin.py" >
+            <div class="row">
+                <div class="col-xs-12 col-md-10">
+                    <div class="input-group">
+                        <input type="text" placeholder="Search.." name="search" class="form-control form-control">
+                        <input type="hidden" name="search_offset" value=0>
+                        <span class="input-group-btn-lg">
+                            <button type="submit" class="btn btn-outline-success">Submit </button>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-2">
+                    <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#demo">Advanced</button>
+                </div>
+            </div>
+            <div id="demo" class="mt-2 collapse">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item active"><a class="nav-link active" data-toggle="tab" href="#home">Identifiers</a></li>
+                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#date">Date</a></li>
+                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#order">Order By</a></li>
+                </ul>
+                <div class="border-right border-left border-bottom">
+                    <div class="tab-content">
+                        <div id="home" class="p-3 tab-pane active">
+                            <label class="radio-inline"><input type="radio" name="identifier" value="none" checked>None</label>
+                            <label class="radio-inline"><input type="radio" name="identifier" value="ip" >Ip Addresses</label>
+                            <label class="radio-inline"><input type="radio" name="identifier" value="mail">Mail Addresses</label>
+                        </div>
+                        <div id="date" class="p-3 tab-pane">
+                            <label>Start: <input type="date" name="start"></label>
+                            <label>End: <input type="date" name="end"></label>
+                        </div>
+                        <div id="order" class="p-3 tab-pane">
+                            <label class="radio-inline"><input type="radio" name="order" value="new" checked>Newest</label>
+                            <label class="radio-inline"><input type="radio" name="order" value="old" >Oldest</label>
+                            <label class="radio-inline"><input type="radio" name="order" value="mrel">Most Relevant</label>
+                            <label class="radio-inline"><input type="radio" name="order" value="lrel">Least Relevant</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+
+</html>
