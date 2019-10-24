@@ -2,8 +2,10 @@
 # coding: utf-8
 import cgi, html, datetime
 import mysql.connector as mariadb
-from utils import html_escape
+import sys, os
+sys.path.insert(1, os.path.join(sys.path[0], '..'))
 from constants import DB_HOST, DB_NAME, DB_USER, DB_PW, DB_TABLE_NAME, SC_PER_PAGE
+from utils import html_escape
 from page_generation import generate_normal_page
 
 mariadb_connection = mariadb.connect(user=DB_USER, host=DB_HOST, password=DB_PW, database=DB_NAME)

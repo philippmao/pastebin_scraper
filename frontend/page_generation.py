@@ -1,5 +1,7 @@
 #!/usr/bin/python
 # coding: utf-8
+import sys, os
+sys.path.insert(1, os.path.join(sys.path[0], '..'))
 from constants import DB_HOST, DB_NAME, DB_USER, DB_PW, DB_TABLE_NAME, SC_PER_PAGE
 from utils import slider
 

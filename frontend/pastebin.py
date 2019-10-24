@@ -2,6 +2,8 @@
 # coding: utf-8
 import cgi, html, datetime
 import mysql.connector as mariadb
+import sys, os
+sys.path.insert(1, os.path.join(sys.path[0], '..'))
 from constants import DB_HOST, DB_NAME, DB_USER, DB_PW, DB_TABLE_NAME, SC_PER_PAGE
 from utils import highlight, html_escape, to_unix, add_to_where
 from page_generation import generate_normal_page, generate_navigation_buttons, generate_pagination, add_sorting_script
